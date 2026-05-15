@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Piedra, Papel o Tijera</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;600&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #0d0d0f;
+      color: #eee;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      gap: 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      letter-spacing: 3px;
+    }
+
+    p { color: #888; }
+
+    .botones {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .botones form button {
+      font-size: 3rem;
+      padding: 1.2rem 1.8rem;
+      border: 2px solid #2a2a30;
+      border-radius: 18px;
+      background: #18181c;
+      color: white;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      transition: transform 0.15s, border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .botones form button:hover {
+      transform: scale(1.12);
+      border-color: #e84545;
+      box-shadow: 0 0 20px rgba(232,69,69,0.3);
+    }
+
+    .botones form span {
+      font-size: 0.85rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Piedra, Papel o Tijera</h1>
+  <p>Elige tu arma</p>
+
+  <div class="botones">
+
+    <form action="/jugar" method="POST">
+      <input type="hidden" name="jugador" value="piedra">
+      <button type="submit">
+        🪨
+        <span>Piedra</span>
+      </button>
+    </form>
+
+    <form action="/jugar" method="POST">
+      <input type="hidden" name="jugador" value="papel">
+      <button type="submit">
+        📄
+        <span>Papel</span>
+      </button>
+    </form>
+
+    <form action="/jugar" method="POST">
+      <input type="hidden" name="jugador" value="tijera">
+      <button type="submit">
+        ✂️
+        <span>Tijera</span>
+      </button>
+    </form>
+
+  </div>
+
+</body>
+</html>
